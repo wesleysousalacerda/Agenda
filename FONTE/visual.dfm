@@ -1,0 +1,41 @@
+object Formvisual: TFormvisual
+  Left = 260
+  Top = 137
+  Align = alClient
+  AlphaBlend = True
+  BorderStyle = bsNone
+  ClientHeight = 523
+  ClientWidth = 895
+  Color = clBtnFace
+  TransparentColor = True
+  ParentFont = True
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  Visible = True
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Image1: TImage
+    Left = 24
+    Top = 16
+    Width = 865
+    Height = 481
+    Center = True
+  end
+  object AdvShapeButton1: TAdvShapeButton
+    Left = 912
+    Top = 8
+    Width = 73
+    Height = 33
+    Appearance.Shape = bsRectangle
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    Text = '&Sair'
+    Version = '1.2.0.0'
+    OnClick = AdvShapeButton1Click
+  end
+end

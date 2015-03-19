@@ -1,0 +1,129 @@
+object dm1: Tdm1
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Left = 1151
+  Top = 102
+  Height = 150
+  Width = 215
+  object tbagenda: TTable
+    Active = True
+    DatabaseName = 'AGENDA'
+    IndexName = 'indagenom'
+    TableName = 'AGENDA.db'
+    Left = 72
+    Top = 8
+    object tbagendaCODIGO: TAutoIncField
+      DisplayWidth = 12
+      FieldName = 'CODIGO'
+      ReadOnly = True
+    end
+    object tbagendaNUMERO: TStringField
+      DisplayWidth = 18
+      FieldName = 'NUMERO'
+      Size = 15
+    end
+    object tbagendaNOME: TStringField
+      DisplayWidth = 14
+      FieldName = 'NOME'
+      Size = 40
+    end
+    object tbagendaCIDADE: TStringField
+      DisplayWidth = 11
+      FieldName = 'CIDADE'
+      Size = 30
+    end
+    object tbagendaRELACAO: TStringField
+      DisplayWidth = 11
+      FieldName = 'RELACAO'
+      Size = 30
+    end
+    object tbagendaOBS: TMemoField
+      DisplayWidth = 12
+      FieldName = 'OBS'
+      BlobType = ftMemo
+      Size = 50
+    end
+    object tbagendaIMPORTANCIA: TFloatField
+      DisplayWidth = 15
+      FieldName = 'IMPORTANCIA'
+    end
+    object tbagendaFOTO: TGraphicField
+      DisplayWidth = 12
+      FieldName = 'FOTO'
+      BlobType = ftGraphic
+    end
+    object tbagendaEMAIL: TStringField
+      DisplayWidth = 60
+      FieldName = 'EMAIL'
+      Size = 50
+    end
+    object tbagendaNIVER: TDateField
+      DisplayWidth = 12
+      FieldName = 'NIVER'
+    end
+  end
+  object dsagenda: TDataSource
+    DataSet = tbagenda
+    Left = 16
+    Top = 8
+  end
+  object qragenda: TQuery
+    DatabaseName = 'Agenda'
+    DataSource = dsagenda
+    SQL.Strings = (
+      'select * from tbagenda order by nome'
+      '')
+    Left = 120
+    Top = 8
+  end
+  object TBEU: TTable
+    Active = True
+    DatabaseName = 'Agenda'
+    TableName = 'MEUSDADOS.db'
+    Left = 72
+    Top = 64
+    object TBEUNOME: TStringField
+      FieldName = 'NOME'
+      Size = 50
+    end
+    object TBEUEMAIL: TStringField
+      FieldName = 'EMAIL'
+      Size = 40
+    end
+    object TBEUCPF: TStringField
+      DisplayWidth = 50
+      FieldName = 'CPF'
+      Size = 15
+    end
+    object TBEURG: TStringField
+      DisplayWidth = 50
+      FieldName = 'RG'
+      Size = 30
+    end
+    object TBEUCONTA: TStringField
+      DisplayWidth = 50
+      FieldName = 'CONTA'
+      Size = 10
+    end
+    object TBEUTITULO: TStringField
+      DisplayWidth = 50
+      FieldName = 'TITULO'
+      Size = 30
+    end
+    object TBEUCTPS: TStringField
+      DisplayWidth = 50
+      FieldName = 'CTPS'
+      Size = 30
+    end
+    object TBEUEMAILSECUNDARIO: TStringField
+      DisplayWidth = 50
+      FieldName = 'EMAILSECUNDARIO'
+      Size = 40
+    end
+  end
+  object DSEU: TDataSource
+    DataSet = TBEU
+    Left = 16
+    Top = 64
+  end
+end
